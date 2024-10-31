@@ -1,0 +1,1 @@
+`irm https://raw.githubusercontent.com/jackson-carroll/NUC_Setup/refs/heads/main/AutoNUC.ps1 | iex`

@@ -1,12 +1,13 @@
-#   ,---.  ,--. ,--.,--------. ,-----. ,--.  ,--.,--. ,--. ,-----. 
-#  /  O  \ |  | |  |'--.  .--''  .-.  '|  ,'.|  ||  | |  |'  .--./ 
-# |  .-.  ||  | |  |   |  |   |  | |  ||  |' '  ||  | |  ||  |     
-# |  | |  |'  '-'  '   |  |   '  '-'  '|  | `   |'  '-'  ''  '--'\ 
-# `--' `--' `-----'    `--'    `-----' `--'  `--' `-----'  `-----' 
+#     ___    __  __ ______ ____   _   __ __  __ ______                
+#    /   |  / / / //_  __// __ \ / | / // / / // ____/   ____   __  __
+#   / /| | / / / /  / /  / / / //  |/ // / / // /       / __ \ / / / /
+#  / ___ |/ /_/ /  / /  / /_/ // /|  // /_/ // /___ _  / /_/ // /_/ / 
+# /_/  |_|\____/  /_/   \____//_/ |_/ \____/ \____/(_)/ .___/ \__, /  
+#                                                    /_/     /____/   
 #
-# ┌----┐ © 2024 Avertium. All rights reserved.
-# | Av | Credits: Jackson Carroll
-# └----┘ Version: 1.0                                          
+# ┌────┐ © 2024 Avertium. All rights reserved.
+# │ Av │ Credits: Jackson Carroll
+# └────┘ Version: 1.1
 
 # This fixes the Windows Terminal "font not found" error for Nerdfonts
 # Source: https://github.com/microsoft/terminal/issues/11583#issuecomment-1325923731
@@ -23,8 +24,7 @@ $apiKey = Read-Host -Prompt "Please enter your Nessus Pro API key"
 &"C:\Program Files\Tenable\Nessus\nessuscli.exe" adduser --name=avertium
 
 # Restart the service to apply the changes
-net stop "Tenable Nessus"
-net start "Tenable Nessus"
+Restart-Service -Name "Tenable Nessus" -Confirm
 
 # Once Nessus is done downloading, shut down the machine
-Stop-Computer -Confirm
+Stop-Computer -Force -Confirm
