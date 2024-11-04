@@ -24,7 +24,8 @@ $apiKey = Read-Host -Prompt "Please enter your Nessus Pro API key"
 &"C:\Program Files\Tenable\Nessus\nessuscli.exe" adduser --name=avertium
 
 # Restart the service to apply the changes
-Restart-Service -Name "Tenable Nessus" -Confirm
+net stop "Tenable Nessus"
+net start "Tenable Nessus"
 
 # Once Nessus is done downloading, shut down the machine
 Stop-Computer -Force -Confirm
