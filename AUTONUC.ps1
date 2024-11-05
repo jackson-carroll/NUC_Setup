@@ -21,7 +21,7 @@ $apiKey = Read-Host -Prompt "Please enter your Nessus Pro API key"
 &"C:\Program Files\Tenable\Nessus\nessuscli.exe" fetch --register $apiKey
 
 # TODO: make this non-interactive
-&"C:\Program Files\Tenable\Nessus\nessuscli.exe" adduser --name=avertium
+&"C:\Program Files\Tenable\Nessus\nessuscli.exe" adduser avertium
 
 # Restart the service to apply the changes
 net stop "Tenable Nessus"
